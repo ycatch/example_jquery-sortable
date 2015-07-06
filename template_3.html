@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- META -->
+	<title>Example - jQuery sortable - catch.jp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="" />
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="jquery-sortable.css" media="all" /> 
+</head>
+<body>
+<div id="blocks">
+	<div class="col_6">
+		<h3>くだもの</h3>
+		<ul class='example block connect-area'>
+		  <li>りんご</li>
+		  <li>バナナ</li>
+		  <li>
+		  <ul>いちご
+			  <li>ストロベリー</li>
+			  <li>ブルーベリー</li>
+			  <li>ブラックベリー</li>
+		  </ul>
+		  </li>
+		  <li>
+		  <ul>柑橘
+			  <li>みかん</li>
+			  <li>夏みかん</li>
+			  <li>ぽんかん</li>
+		  </ul>
+		  </li>
+		</ul>
+	</div>
+	<div class="col_6">
+		<h3>さかな</h3>
+		<ul class='example_2 block connect-area'>
+		  <li>タイ</li>
+		  <li>ヒラメ</li>
+		  <li>
+		  <ul>まぐろ
+			  <li>カジキマグロ</li>
+			  <li>メバチマグロ</li>
+			  <li>大マグロ</li>
+		  </ul>
+		  </li>
+		  <li>
+		  <ul>ブリ
+			  <li>ぶり</li>
+			  <li>かんぱち</li>
+			  <li>はまち</li>
+		  </ul>
+		  </li>
+		</ul>
+	</div>
+</div> <!-- End Grid -->
+<!-- Javascript -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src='js/jquery-sortable.js'></script>
+<script type="text/javascript">
+	$(function() {
+		$("ul.example").sortable({
+			group: 'connect-area'
+		});
+		$("ul.example_2").sortable({
+			group: 'connect-area',
+			drop: false
+		});
+	});
+</script>
+</body>
+</html>

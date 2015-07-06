@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- META -->
+	<title>Example - jQuery sortable - catch.jp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="" />
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="jquery-sortable.css" media="all" /> 
+</head>
+<body>
+<div id="blocks">
+	<ul class='example block'>
+	  <li>りんご</li>
+	  <li>バナナ</li>
+	  <li>
+	  <ul>
+		  <li>ストロベリー</li>
+		  <li>ブルーベリー</li>
+		  <li>ブラックベリー</li>
+	  </ul>
+	  </li>
+	  <li>
+	  <ul>
+		  <li>みかん</li>
+		  <li>夏みかん</li>
+		  <li>ぽんかん</li>
+	  </ul>
+	  </li>
+	</ul>
+</div> <!-- End Grid -->
+<!-- Javascript -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src='js/jquery-sortable.js'></script>
+<script type="text/javascript">
+	$(function  () {
+		$("ul.example").sortable();
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- META -->
+	<title>Example - jQuery sortable - catch.jp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="" />
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="jquery-sortable.css" media="all" /> 
+</head>
+<body>
+<div class="grid">
+	<div class="col_12" style="margin-top:80px;">
+		<h1>example 3</h1>
+		<p>リスト間を移動可能。</p>
+	</div>
+	<div class="col_12">
+		<div id="code_area">
+		</div>
+	</div>
+	<div class="col_12">
+	<hr />
+	<p>Copyright 2015 Yutaka Kachi All Rights Reserved released under CC-BY.</p>
+	</div>
+</div> <!-- End Grid -->
+<!-- Javascript -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src='js/jquery-sortable.js'></script>
+<script type="text/javascript">
+	$(function() {
+		$("#code_area").load("template_3.html #blocks", function(){
+			$("ul.example").sortable({
+				group: 'connect-area'
+			});
+			$("ul.example_2").sortable({
+				group: 'connect-area'
+			});
+		});
+	});
+</script>
+<script type="text/javascript" src="js/kickstart.js"></script>
+</body>
+</html>

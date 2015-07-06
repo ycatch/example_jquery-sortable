@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- META -->
+	<title>Example - jQuery sortable - catch.jp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="" />
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="jquery-sortable.css" media="all" /> 
+</head>
+<body>
+<div class="grid">
+	<div class="col_8" style="margin-top:80px;">
+		<h1><i class="fa fa-list-ul"></i> jQuery Sortable<br />
+		入れ子(ネスト)になったリストが、<br />
+		ドラッグ&ドロップで並び替えできるjQueryプラグイン</h1>
+		<p>右の入れ子(ネスト)になったリストは、ドラッグ&ドロップで並び替えできます。</p>
+		<p>親要素と子要素を入れ替えたり、親子をまとめて移動したりと、柔軟に操作できます。</p>
+		<p>jQuery UI Sortableではなく、Jonas von Andrian氏が開発した独自のjQueryプラグイン「jQuery Sortable」です。</p>
+		<p><a href='http://johnny.github.io/jquery-sortable/' target='_blank'>jQuery Sortable 公式ページ</a></p>
+	</div>
+	<div class="col_4" style="margin-top:100px;">
+		<h5>やってみる</h5>
+		<ul class='example block'>
+		  <li>りんご</li>
+		  <li>バナナ</li>
+		  <li>
+		  <ul>
+			  <li>ストロベリー</li>
+			  <li>ブルーベリー</li>
+			  <li>ブラックベリー</li>
+		  </ul>
+		  </li>
+		  <li>
+		  <ul>
+			  <li>みかん</li>
+			  <li>夏みかん</li>
+			  <li>ぽんかん</li>
+		  </ul>
+		  </li>
+		</ul>
+	</div>
+	<div class="col_12">
+	<h2>導入方法</h2>
+	<p>設定するのは、次の3つ。</p>
+	<h3>css</h3>
+	<pre>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;jquery-sortable.css&quot; media=&quot;all&quot; /&gt; </pre>
+	<p>jquery-sortable.cssの中身は、こんな感じ。</p>
+	<pre>body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+ul.block li{
+    cursor: move;
+    list-style: none;
+    margin: 4px 4px 4px 4px;
+    padding: 2px 4px 4px 4px;
+    font-size: 12px;
+    font-weight: bold;
+     line-height: 1.4;
+    word-spacing: 0.3em;
+    border: 2px solid white;
+    background-color: #7f8c8d; /* Asbestos */
+    color: White;
+    border-radius: 4px;
+    -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
+          transition: border .25s linear, color .25s linear, background-color .25s linear;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+ul.block li.placeholder {
+    position: relative;
+}
+ul.block li.placeholder:before {
+    position: absolute;
+    content: &quot;&quot;;
+    width: 0;
+    height: 0;
+    margin-top: -8px;
+    left: -8px;
+    top: -1px;
+    border: 8px solid transparent;
+    border-left-color: red;
+    border-right: none;
+    z-index: 2000;
+}</pre>
+	<h3>html</h3>
+	<p>リストは、こんな感じで記述する。</p>
+	<pre>&lt;ul class=&#039;example block&#039;&gt;
+  &lt;li&gt;りんご&lt;/li&gt;
+  &lt;li&gt;バナナ&lt;/li&gt;
+  &lt;li&gt;
+  &lt;ul&gt;
+      &lt;li&gt;ストロベリー&lt;/li&gt;
+      &lt;li&gt;ブルーベリー&lt;/li&gt;
+      &lt;li&gt;ブラックベリー&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+  &lt;ul&gt;
+      &lt;li&gt;みかん&lt;/li&gt;
+      &lt;li&gt;夏みかん&lt;/li&gt;
+      &lt;li&gt;ぽんかん&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+	<h3>Javascript</h3>
+	<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&#039;js/jquery-sortable.js&#039;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    $(function  () {
+        $(&quot;ul.example&quot;).sortable();
+    });
+&lt;/script&gt;</pre>
+	</div>
+	<div class="col_12">
+	<h2>Example</h2>
+	<ul>
+		<li><a href='index_2.html' target='_blank'>テンプレートからリストを読み込んで表示</a></li>
+		<li><a href='index_3.html' target='_blank'>2つのリストの間で、移動可能</a></li>
+		<li><a href='index_4.html' target='_blank'>一方から他方へコピー</a></li>
+	</ul>
+	<h2>Show case</h2>
+	<ul>
+		<li><a href='http://www.catch.jp/wiki/index.php?SoraMame.Block' target='_blank'>そら豆ブロック:ブロック型コードエディタ</a></li>
+		<li><a href='http://ycatch.github.io/mameblock.js/index.ja.html' target='_blank'>MameBlock.js - ビジュアルコードエディタのJavascriptライブラリ</a></li>
+	</ul>
+	</div>
+	<div class="col_12">
+	<hr />
+	<p>Copyright 2015 Yutaka Kachi All Rights Reserved released under CC-BY.</p>
+	</div>
+</div> <!-- End Grid -->
+<!-- Javascript -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src='js/jquery-sortable.js'></script>
+<script type="text/javascript">
+	$(function  () {
+		$("ul.example").sortable();
+	});
+</script>
+<script type="text/javascript" src="js/kickstart.js"></script>
+</body>
+</html>
